@@ -7,22 +7,25 @@ customtkinter.set_default_color_theme("blue")
  #creating the Window 
 app = customtkinter.CTk()
 
-frame = customtkinter.CTkFrame(master=app)
-frame.pack(pady=20, padx=60, fill="both", expand=True)
-
 #Changing the title of the application 
 app.title("Auto Clicker")
 
 #adjusting the minimum widow on start up 
 app.minsize(720,420)
 
+def test():
+    print("Testing")
+
+
+label1 = customtkinter.CTkLabel(app, text="Auto clicker and mouse mover")
+label1.grid(row=0, column=29, columnspan=2)
 #add start and end buttons 
 
-startBtn = customtkinter.CTkButton(master=frame, text="Start")
-startBtn.grid(row=9, column=4)
+startBtn = customtkinter.CTkButton(app, text="Start", command=test)
+startBtn.grid(row=30, column=29)
 
-endBtn = customtkinter.CTkButton(master=frame, text="Finish")
-endBtn.grid(row=9, column=7)
+endBtn = customtkinter.CTkButton(app, text="Finish", command=test)
+endBtn.grid(row=30, column=30,padx=10)
 
 
 
